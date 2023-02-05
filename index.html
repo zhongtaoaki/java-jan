@@ -2,18 +2,62 @@
 <html>
     <head>
         <title>Hello</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Righteous&family=Zhi+Mang+Xing&display=swap"
+            rel="stylesheet">
+        <style>
+            h1 div{color: blue;} 
+            #myH1, #myH2{color: pink; text-align: center;} 
+            .background{background-color: lightskyblue;}
+            .green{color: rgb(15, 81, 81);}
+            .big{font-size: large;}
+            body{
+                background-image: url(img/1112818.jpg);
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-color:rgba(255,255,255,0.8);
+                background-blend-mode:lighten;
+            }
+            #myDiv {
+                width: 300px;
+                border-style: solid double;
+                border-width: 15px;
+                border-color: cornflowerblue;
+                border-radius: 15px;
+                padding: 15px;
+                margin: 15px;
+            }
+            iframe {
+                border: 1px solid black;
+                margin: auto;
+            }
+        </style>
     </head>
-    <body>
+    <body style="font-family: 'Righteous', cursive;">
         <!-- 这个请注意，要写标题 -->
-        <h1 title="hi">欢迎来到aki的空间</h1>
-        <h2 title="hi">this is my page</h2>
+        <h1 id="myH1" class="pink" title="hi"><span class="background">欢迎来到aki的空间!</span></h1>
+        <h2 id="myH2" class="green big" title="hi">this is my page</h2>
         <hr>
-        <div style="color: crimson;">
-            <h3 title="hi">this is my page</h3>
-            <h4 title="hi">this is my page</h4>
+        <div id="myDiv" style="background-color: bisque;">
+            <h3 title="hi">高度和宽度
+                <br>・ height 和 width 属性分别可以用于设置元素的高度和宽度。
+                <br>・ height 和 width 的值也可以以 px(像素)、em(相对于文字 大小)、%(百分比)等为单位。</h3>
+            <h4 style="color: yellow;" title="hi">this is my page</h4>
         </div>
 
-        <p>this is <b>my</b> content</p>
+        <iframe
+            src="http://player.bilibili.com/player.html?aid=821015472&bvid=BV1f34y1f7dX&cid=987734894&page=1"
+            scrolling="no" border="0" frameborder="no" framespacing="0"
+            allowfullscreen="true"> </iframe>
+
+        <br>
+
+        <video src="tree.mp4" type="video/mp4" controls></video>
+
+        <div><p>this is <b>my</b> content</p></div>
         <p>this is <span style="color: crimson;">my</span> content</p>
 
         <button>this is my button</button>
@@ -57,7 +101,8 @@
 
         <form action="/TODO" method="POST">
             <label for="username">用户名：</label>
-            <input id="username" name="username" type="text" placeholder="admin"><br>
+            <input id="username" name="username" type="text"
+                placeholder="admin"><br>
             <label for="password">密码：</label>
             <input id="password" name="password" type="password"><br>
             <input type="submit" value="登陆">
