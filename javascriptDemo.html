@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&family=Zhi+Mang+Xing&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      h1 div {
+        color: blue;
+      }
+      #myH1,
+      #myH2 {
+        color: pink;
+        text-align: center;
+      }
+      .background {
+        background-color: lightskyblue;
+      }
+      .green {
+        color: rgb(15, 81, 81);
+      }
+      .big {
+        font-size: large;
+      }
+      body {
+        background-image: url(img/1112818.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgba(255, 255, 255, 0.8);
+        background-blend-mode: lighten;
+      }
+      .div {
+        width: 265px;
+        border-style: solid double;
+        border-width: 15px;
+        border-color: cornflowerblue;
+        border-radius: 15px;
+        padding: 15px;
+        margin: 15px;
+        float: left;
+      }
+    </style>
+  </head>
+  <body style="font-family: 'Righteous', cursive">
+    <!-- 这个请注意，要写标题 -->
+    <h1 id="myH1" class="pink" title="hi">
+      <span class="background">欢迎来到aki的空间!</span>
+    </h1>
+    <h2 id="myH2" class="green big" title="hi">this is my page</h2>
+    <hr />
+    <button id="myButton">请点击此处更换文字</button>
+    <div>
+      <div id="myDiv1" style="background-color: bisque" class="div">
+        <h3 id="myH3-1" title="hi" onclick="changeText()">
+          高度和宽度 <br />・ height 和 width
+          属性分别可以用于设置元素的高度和宽度。 <br />・ height 和 width
+          的值也可以以 px(像素)、em(相对于文字 大小)、%(百分比)等为单位。
+        </h3>
+        <h4 style="color: yellow" title="hi">this is my page</h4>
+      </div>
+
+      <div id="myDiv2" style="background-color: bisque" class="div">
+        <h3 id="myH3-2" title="hi" onclick="changeText()">
+          高度和宽度 <br />・ height 和 width
+          属性分别可以用于设置元素的高度和宽度。 <br />・ height 和 width
+          的值也可以以 px(像素)、em(相对于文字 大小)、%(百分比)等为单位。
+        </h3>
+        <h4 style="color: yellow" title="hi">this is my page</h4>
+      </div>
+      <div id="myDiv3" style="background-color: bisque" class="div">
+        <h3 id="myH3-3" title="hi" onclick="changeText()">
+          高度和宽度 <br />・ height 和 width
+          属性分别可以用于设置元素的高度和宽度。 <br />・ height 和 width
+          的值也可以以 px(像素)、em(相对于文字 大小)、%(百分比)等为单位。
+        </h3>
+        <h4 style="color: yellow" title="hi">this is my page</h4>
+      </div>
+    </div>
+    <form action="/TODO" method="POST">
+      <label for="username">用户名：</label>
+      <input
+        id="username"
+        name="username"
+        type="text"
+        placeholder="admin"
+      /><br />
+      <label for="password">密码：</label>
+      <input id="password" name="password" type="password" /><br />
+      <input type="submit" value="登陆" />
+    </form>
+
+    <a id="myA" href="http://www.google.com">google</a>
+
+    <script>
+      document.getElementById("myA").href = "http://www.bilibili.com";
+
+      let paragraph = document.createElement("p");
+      paragraph.innerHTML = document.getElementById("myA").after(paragraph);
+
+      function changeText() {
+        document.getElementById("myH3").innerHTML =
+          "高度和宽度 <br />・ height 和 width属性分别可以用于设置元素的高度和宽度。 <br />・ height 和 width的值也可以以 px(像素)、em(相对于文字 大小)、%(百分比)等为单位。";
+      }
+
+      // document.getElementById("myButton").onclick = () => {
+      //   document.getElementById("myH3").innerHTML =
+      //     "Javaは、汎用プログラミング言語とソフトウェアプラットフォームの双方を指している総称ブランドである。オラクルおよびその関連会社の登録商標である。1996年にサン・マイクロシステムズによって市場リリースされ、2010年に同社がオラクルに吸収合併された事によりJavaの版権もそちらに移行した。";
+      // };
+
+      let message =
+        "Javaは、汎用プログラミング言語とソフトウェアプラットフォームの双方を指している総称ブランドである。オラクルおよびその関連会社の登録商標である。1996年にサン・マイクロシステムズによって市場リリースされ、2010年に同社がオラクルに吸収合併された事によりJavaの版権もそちらに移行した。";
+
+      // document.getElementById("myButton").addEventListener("click", () => {
+      //   document.getElementById("myH3").innerHTML = message;
+      // });
+
+      // $("#myButton").click(() => {
+      //   $("#myH3").html(message);
+      // });
+
+      let arr = ["java", "python", "js"];
+      var index = 0;
+      $("#myButton").click(() => {
+        $("#myH3-1").html(arr[index]);
+        $("#myH3-2").html(arr[(index + 1) % 3]);
+        $("#myH3-3").html(arr[(index + 2) % 3]);
+        index = (index + 1) % 3;
+      });
+
+      $.ajax({
+        url:"http://ip-api.com/json",
+        data:{fields:"country,regionName,city,zip,timezone"},
+        success:(result)=>{
+          console.log(result);
+        }
+      })
+    </script>
+  </body>
+</html>
